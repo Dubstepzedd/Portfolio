@@ -1,6 +1,6 @@
 import { extend, Object3DNode } from '@react-three/fiber'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
-import { useFont } from '../utils/useFont';
+import { useFont } from '../../utils/useFont';
 import { forwardRef, useEffect, useRef } from 'react';
 import { Group } from 'three';
 

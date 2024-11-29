@@ -1,6 +1,6 @@
 import { Suspense, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import Text3D from './components/Text3D';
+import Text3D from '../components/fiber/text-3d';
 
 import { Group } from 'three';
 
@@ -16,12 +16,12 @@ const Scene = () => {
 
   return (
       <Suspense fallback={null}>
-        <directionalLight position={[0, 0, 2]} />
+        <directionalLight position={[5, 0, 0]} />
         <Text3D
-          text="Hello, World!!!!!!!!!!!!!"
+          text="JOEL"
           position={[0, 0, 0]}
-          size={0.5}
-          depth={0.1}
+          size={2}
+          depth={0.7}
           color="red"
           ref={textRef}
           center={true}
