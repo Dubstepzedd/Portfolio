@@ -3,10 +3,16 @@ import { Squash as Hamburger } from "hamburger-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Switch, { SwitchProps } from '@mui/material/Switch';
 import DarkModeToggle from "./toggle";
+import { section } from "framer-motion/client";
 
-const HamburgerMenu = () => {
+type HamburgerMenuProps = {
+    section: number;
+    onSectionChange: (section: number) => void;
+};
+
+const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
     const [isOpen, setOpen] = useState<boolean>(false);
-    
+
     return (
         <div>
             <div
@@ -14,12 +20,23 @@ const HamburgerMenu = () => {
                     isOpen ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 z-40`}
             >
-                <ul className="mt-32 p-4 space-y-5 font-semibold select-none font-mono text-lg text-black dark:text-white">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#services">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul className="mt-32 p-4 space-y-5 font-semibold select-none font-mono text-lg">
+                    {["About me", "Work", "Projects", "Contact"].map((title, index) => (
+                        <li key={index}>
+                            <a
+                                className={`rounded-lg p-2 block hover:bg-orange-400 ${
+                                    section === index ? "text-blue-800 dark:text-blue-600" : "text-black dark:text-white"
+                                }`}
+                                onClick={() => {
+                                    console.log("Clicked on section", index, section);
+                                    onSectionChange(index);
+                                    setOpen(false); // Close the menu on selection
+                                }}
+                            >
+                                {title}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
 
                 <div className="flex justify-center space-x-6 mt-8 mb-4">
