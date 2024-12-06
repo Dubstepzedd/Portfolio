@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Switch, { SwitchProps } from '@mui/material/Switch';
 import DarkModeToggle from "./toggle";
-import { section } from "framer-motion/client";
 
 type HamburgerMenuProps = {
     section: number;
@@ -21,14 +19,13 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
                 } transition-transform duration-300 z-40`}
             >
                 <ul className="mt-32 p-4 space-y-5 font-semibold select-none font-mono text-lg">
-                    {["About me", "Work", "Projects", "Contact"].map((title, index) => (
+                    {["Introduction", "About me", "Experience", "Projects", "Contact"].map((title, index) => (
                         <li key={index}>
                             <a
                                 className={`rounded-lg p-2 block hover:bg-orange-400 ${
                                     section === index ? "text-blue-800 dark:text-blue-600" : "text-black dark:text-white"
                                 }`}
                                 onClick={() => {
-                                    console.log("Clicked on section", index, section);
                                     onSectionChange(index);
                                     setOpen(false); // Close the menu on selection
                                 }}
@@ -47,6 +44,8 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
                         <FaGithub size={30} color="#333" />
                     </a>
                 </div>
+
+                <p className="font-thin italic text-black dark:text-white">© 2024 Liam Andersson. All rights deserved</p>
             </div>
 
             <div
