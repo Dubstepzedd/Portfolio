@@ -14,7 +14,7 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
     return (
         <div>
             <div
-                className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-700 shadow-lg w-96 transform ${
+                className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-700 shadow-lg sm:w-64 md:w-96 transform ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 z-40`}
             >
@@ -50,7 +50,7 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
 
             <div
                 className={`fixed top-5 z-50 flex space-x-4 transition-all duration-300 ${
-                    isOpen ? "right-52" : "right-10"
+                    isOpen ? "right-20" : "right-10"
                 }`}
             >
                 <div className="flex items-center justify-center bg-orange-400 rounded-2xl p-2">

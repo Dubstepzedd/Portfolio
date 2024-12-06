@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { Section } from "./interface"
 
 type ExperienceCardProps = {
@@ -12,11 +12,39 @@ type ExperienceCardProps = {
 }
 
 export const ExperienceSection = () => {
+    const scrollableDivRef = useRef<HTMLDivElement>(null);
+
+    const handleWheel = (event: WheelEvent) => {
+        const scrollableDiv = scrollableDivRef.current;
+        if (!scrollableDiv) return;
+
+        const isAtTop = scrollableDiv.scrollTop === 0;
+        const isAtBottom = scrollableDiv.scrollHeight === scrollableDiv.scrollTop + scrollableDiv.clientHeight;
+
+        if ((isAtTop && event.deltaY < 0) || (isAtBottom && event.deltaY > 0)) {
+        event.preventDefault(); // Prevent scrolling the page
+        }
+    };
+
+    useEffect(() => {
+        const scrollableDiv = scrollableDivRef.current;
+
+        if (scrollableDiv) {
+        // Add the wheel event listener with passive: false
+        scrollableDiv.addEventListener('wheel', handleWheel, { passive: false });
+
+        // Clean up the event listener when the component is unmounted
+        return () => {
+            scrollableDiv.removeEventListener('wheel', handleWheel);
+        };
+        }
+    }, []);
+    
     return (
         <Section>
             <h1 className="text-5xl font-bold text-black dark:text-white">Experience</h1>
             <button 
-                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg ml-5 mt-8 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700" 
+                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-semibold text-lg ml-5 mt-8 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700" 
                 onClick={
                     () => {
                         window.open('resume.pdf');
@@ -25,7 +53,7 @@ export const ExperienceSection = () => {
             >
                 View Full Resume
             </button>
-            <div className="mt-8 space-y-8 flex-col flex p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 dark:scrollbar-thumb-white scrollbar-track-transparent scrollbar-thumb-rounded">
+            <div ref={scrollableDivRef} className="mt-8 space-y-8 flex-col flex p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 dark:scrollbar-thumb-white scrollbar-track-transparent scrollbar-thumb-rounded">
                 <ExperienceCard
                     role="Software Developer"
                     startDate="Aug 2020"

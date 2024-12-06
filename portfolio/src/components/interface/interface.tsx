@@ -4,6 +4,12 @@ import { ContactSection } from "./contact";
 import { ExperienceSection } from "./experience";
 import { ProjectSection } from "./projects";
 
+
+interface InterfaceProps {
+    setSection: (page: number) => void;
+}
+
+
 export const Section = ({children}) => {
     return (
         <motion.section 
@@ -32,10 +38,10 @@ export const Section = ({children}) => {
     );
 }
 
-export const Interface = () => {
+export const Interface = ({setSection} : InterfaceProps) => {
     return (
         <div className="flex flex-col items-center w-screen">
-            <IntroSection/>
+            <IntroSection setSection={setSection}/>
             <AboutSection/>
             <ExperienceSection/>
             <ProjectSection/>
@@ -44,7 +50,7 @@ export const Interface = () => {
     );
 }
 
-const IntroSection = () => {
+const IntroSection = ({setSection} : InterfaceProps) => {
     return (
         <Section>
             <h1 className="text-black dark:text-white text-6xl font-extrabold leading-snug text-left">
@@ -55,7 +61,9 @@ const IntroSection = () => {
             <p className="text-lg text-gray-800 dark:text-gray-200 mt-4">
                 A software developer with a passion for learning and creating. 
             </p>
-            <button className="bg-orange-400 text-white dark:text-black py-4 px-8 rounded-lg font-bold text-lg mt-16">
+            <button 
+                className="bg-orange-400 text-white dark:text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+                onClick={() => {setSection(4)}}>
                 Contact me
             </button>
         </Section>

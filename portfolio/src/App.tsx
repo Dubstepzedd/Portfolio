@@ -22,7 +22,7 @@ const App = () => {
             <ScrollManager section={section} onSectionChange={setSection}/>
             <Experience />
             <Scroll html>
-              <Interface/>
+              <Interface setSection={setSection}/>
             </Scroll>
         </ScrollControls>
       </Canvas>
