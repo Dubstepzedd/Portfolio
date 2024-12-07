@@ -62,7 +62,7 @@ const IntroSection = ({setSection} : InterfaceProps) => {
                 A software developer with a passion for learning and creating. 
             </p>
             <button 
-                className="bg-orange-400 text-white dark:text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
                 onClick={() => {setSection(4)}}>
                 Contact me
             </button>

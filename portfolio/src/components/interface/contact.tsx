@@ -42,7 +42,7 @@ export const ContactSection = () =>  {
             <h1 className="text-5xl font-bold mb-10 dark:text-white">Contact</h1>
             <form
                 onSubmit={handleSubmit}
-                className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-3xl align-middle"
+                className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-3xl align-middle"
             >
                 <div className="flex flex-col sm:flex-row sm:space-x-4">
                     <input
@@ -77,7 +77,7 @@ export const ContactSection = () =>  {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`py-4 px-8 rounded-lg font-bold text-lg mt-4 w-full ${
+                    className={`py-4 px-8 rounded-lg font-bold text-lg mt-4 w-full transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700 ${
                         isSubmitting ? "bg-gray-400" : "bg-orange-400"
                     } text-white flex items-center justify-center`}
                 >
