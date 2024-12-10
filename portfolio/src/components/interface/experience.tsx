@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import { Section } from "./interface"
+import { useTranslation } from "react-i18next";
 
 type ExperienceCardProps = {
     role: string;
@@ -13,83 +14,69 @@ type ExperienceCardProps = {
 
 export const ExperienceSection = () => {
     const scrollableDivRef = useRef<HTMLDivElement>(null);
-
-    const handleWheel = (event: WheelEvent) => {
-        const scrollableDiv = scrollableDivRef.current;
-        if (!scrollableDiv) return;
-
-        const isAtTop = scrollableDiv.scrollTop === 0;
-        const isAtBottom = scrollableDiv.scrollHeight === scrollableDiv.scrollTop + scrollableDiv.clientHeight;
-
-        if ((isAtTop && event.deltaY < 0) || (isAtBottom && event.deltaY > 0)) {
-        event.preventDefault(); // Prevent scrolling the page
-        }
-    };
-
-    useEffect(() => {
-        const scrollableDiv = scrollableDivRef.current;
-
-        if (scrollableDiv) {
-        // Add the wheel event listener with passive: false
-        scrollableDiv.addEventListener('wheel', handleWheel, { passive: false });
-
-        // Clean up the event listener when the component is unmounted
-        return () => {
-            scrollableDiv.removeEventListener('wheel', handleWheel);
-        };
-        }
-    }, []);
+    const { t } = useTranslation();
     
     return (
         <Section>
-            <h1 className="text-5xl font-bold text-black dark:text-white">Experience</h1>
+            <h1 className="text-5xl font-bold text-black dark:text-white">{t("experience")}</h1>
             <button 
-                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-semibold text-lg ml-5 mt-8 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700" 
+                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-semibold text-lg - mt-8 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700" 
                 onClick={
                     () => {
                         window.open('resume.pdf');
                     }
                 }
             >
-                View Full Resume
+                {t("resume")}
             </button>
-            <div ref={scrollableDivRef} className="mt-8 space-y-8 flex-col flex p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 dark:scrollbar-thumb-white scrollbar-track-transparent scrollbar-thumb-rounded">
-                <ExperienceCard
-                    role="Software Developer"
-                    startDate="Aug 2020"
-                    endDate="Present"
-                    company="Google"
-                    description="Developed and styled interactive web apps for Apple Music, including the user interface of Apple Music’s embeddable web player widget for in-browser user authorization and full song playback."
-                    tags={["Python", "C++", "JavaScript", "React"]}
-                    link={"https://about.google/"}
-                />
-                <ExperienceCard
-                    role="Software Developer"
-                    startDate="Aug 2020"
-                    endDate="Present"
-                    company="Google"
-                    description="Worked on the Google Search team to improve the search algorithm and user experience."
-                    tags={["Python", "C++", "JavaScript", "React"]}
-                    link={"https://about.google/"}
-                />
-                <ExperienceCard
-                    role="Software Developer"
-                    startDate="Aug 2020"
-                    endDate="Present"
-                    company="Google"
-                    description="Developed and styled interactive web apps for Apple Music, including the user interface of Apple Music’s embeddable web player widget for in-browser user authorization and full song playback."
-                    tags={["Python", "C++", "JavaScript", "React"]}
-                    link={"https://about.google/"}
-                />
-                <ExperienceCard
-                    role="Software Developer"
-                    startDate="Aug 2020"
-                    endDate="Present"
-                    company="Google"
-                    description="Worked on the Google Search team to improve the search algorithm and user experience."
-                    tags={["Python", "C++", "JavaScript", "React"]}
-                    link={"https://about.google/"}
-                />
+            <div ref={scrollableDivRef} className="mt-8 space-y-8 flex-col flex">
+            <ExperienceCard
+                role={t("experiences.amanues_aug_2024.role")}
+                startDate={t("experiences.amanues_aug_2024.startDate")}
+                endDate={t("experiences.amanues_aug_2024.endDate")}
+                company={t("experiences.amanues_aug_2024.company")}
+                description={t("experiences.amanues_aug_2024.description")}
+                tags={t("experiences.amanues_aug_2024.tags", { returnObjects: true }) as string[]}
+                link={t("experiences.amanues_aug_2024.link")}
+              />
+              <ExperienceCard
+                role={t("experiences.programmer_aug_2024.role")}
+                startDate={t("experiences.programmer_aug_2024.startDate")}
+                endDate={t("experiences.programmer_aug_2024.endDate")}
+                company={t("experiences.programmer_aug_2024.company")}
+                description={t("experiences.programmer_aug_2024.description")}
+                tags={t("experiences.programmer_aug_2024.tags", { returnObjects: true }) as string[]}
+                link={t("experiences.programmer_aug_2024.link")}
+              />
+              <ExperienceCard
+                role={t("experiences.amanues_jan_2024.role")}
+                startDate={t("experiences.amanues_jan_2024.startDate")}
+                endDate={t("experiences.amanues_jan_2024.endDate")}
+                company={t("experiences.amanues_jan_2024.company")}
+                description={t("experiences.amanues_jan_2024.description")}
+                tags={t("experiences.amanues_jan_2024.tags", { returnObjects: true }) as string[]}
+                link={t("experiences.amanues_jan_2024.link")}
+              />
+              <ExperienceCard
+                role={t("experiences.amanues_aug_2023.role")}
+                startDate={t("experiences.amanues_aug_2023.startDate")}
+                endDate={t("experiences.amanues_aug_2023.endDate")}
+                company={t("experiences.amanues_aug_2023.company")}
+                description={t("experiences.amanues_aug_2023.description")}
+                tags={t("experiences.amanues_aug_2023.tags", { returnObjects: true }) as string[]}
+                link={t("experiences.amanues_aug_2023.link")}
+              />
+              <ExperienceCard
+                role={t("experiences.maintenance_technician_2023.role")}
+                startDate={t("experiences.maintenance_technician_2023.startDate")}
+                endDate={t("experiences.maintenance_technician_2023.endDate")}
+                company={t("experiences.maintenance_technician_2023.company")}
+                description={t("experiences.maintenance_technician_2023.description")}
+                tags={t("experiences.maintenance_technician_2023.tags", { returnObjects: true }) as string[]}
+                link={t("experiences.maintenance_technician_2023.link")}
+              />
+
+           
             </div>
         </Section>
     )

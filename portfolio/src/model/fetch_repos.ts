@@ -29,6 +29,8 @@ export class Repo {
 /*
     Due to rate-limits with the GitHub API, we allow for caching to reduce the number of API calls.
     Fetches my repositories from the GitHub API and filters them based on the number of commits as I don't want to show all repositories. 
+    Qualifiers are found here: https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories#search-by-when-a-repository-was-created-or-last-updated
+    There is no direct way to filter repositories based on the number of commits, so we fetch the last 5 commits for each repository and filter based on that.
 */
 export const fetchRepos = async ({
     setRepos,

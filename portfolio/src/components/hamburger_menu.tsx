@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import DarkModeToggle from "./toggle";
+import DarkModeToggle from "./dark_mode_toggle";
+import LanguageToggle from "./language_toggle";
 
 type HamburgerMenuProps = {
     section: number;
@@ -45,7 +46,7 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
                     </a>
                 </div>
 
-                <p className="font-thin italic text-black dark:text-white">© 2024 Liam Andersson. All rights deserved</p>
+                <p className="p-2 font-thin italic text-wrap text-black dark:text-white text-center">© 2024 Liam Andersson. All rights reserved</p>
             </div>
 
             <div
@@ -53,6 +54,9 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
                     isOpen ? "right-20" : "right-10"
                 }`}
             >
+                <div className="flex items-center justify-center bg-orange-400 rounded-2xl p-2">
+                    <LanguageToggle />
+                </div>
                 <div className="flex items-center justify-center bg-orange-400 rounded-2xl p-2">
                     <DarkModeToggle/>
                 </div>

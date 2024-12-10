@@ -1,33 +1,61 @@
-import React, { useState } from 'react'
-import './App.css'
-import HamburgerMenu from './components/hamburger_menu'
-import { useTheme } from './theme/theme_context'
-import { Scroll, ScrollControls } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import Experience from './components/fiber/office_scene'
-import { Interface } from './components/interface/interface'
-import { ScrollManager } from './components/scroll_manager'
-
+import React, { useEffect, useRef, useState } from 'react';
+import './App.css';
+import HamburgerMenu from './components/hamburger_menu';
+import { useTheme } from './theme/theme_context';
+import { Interface } from './components/interface/interface';
 
 const App = () => {
-
   const { theme } = useTheme();
-  const [section, setSection] = useState<number>(0)
+  const [section, setSection] = useState<number>(0);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+
+  const docRef = useRef<HTMLDivElement>(null); // For the scrollable div!
+
+  // These are for the Interface section, but are needed here to calculate the scroll position
+  const introRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const projectRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const sectionRefs = [introRef, aboutRef, experienceRef, projectRef, contactRef];
+
+  const handleScroll = () => {
+    if(docRef.current) {
+      const offset = docRef.current.scrollTop;
+      const middle = window.innerHeight / 2 +  offset;
+      const sectionPositions = sectionRefs.map((ref) => {
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          return rect.top + offset;
+        }
+        return 0;
+      });
+
+      const currentSection = sectionPositions.findIndex((pos, index) => {
+        const nextPos = sectionPositions[index + 1] || Infinity;
+        return middle >= pos && middle < nextPos;
+      });
+
+      setSection(currentSection);
+    }
+
+  }
+
+  useEffect(() => {
+    const selectedRef = sectionRefs[section];
+    if (selectedRef?.current) {
+      selectedRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [section]);
 
   return (
-    <div className={`w-screen h-screen ${theme}`}>
+    <div ref={docRef} className={`w-screen h-screen ${theme} overflow-x-hidden`} onScroll={handleScroll}>
       <HamburgerMenu section={section} onSectionChange={setSection} />
-      <Canvas camera={{ position: [-1, 2, 5], rotation: [-Math.PI/8,0,0]}} className='dark:bg-slate-700 bg-gray-300'>
-        <ScrollControls pages={5} damping={0.1} infinite={false}>
-            <ScrollManager section={section} onSectionChange={setSection}/>
-            <Experience />
-            <Scroll html>
-              <Interface setSection={setSection}/>
-            </Scroll>
-        </ScrollControls>
-      </Canvas>
+      <Interface setSection={setSection} sectionRefs={sectionRefs} />
+      <div>Scroll Position: {scrollPosition}px</div> {/* Display scroll position */}
     </div>
   );
 }
 
-export default App
+export default App;

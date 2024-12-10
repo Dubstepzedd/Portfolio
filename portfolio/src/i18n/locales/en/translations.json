@@ -1,0 +1,68 @@
+{
+    "intro_1": "Hi, I am ",
+    "intro_2": "Liam Andersson",
+    "intro_3": "A computer-science student with a passion for learning and creating.",
+    "contact_me": "Contact Me",
+    "about_1": "I’m currently pursuing a Master’s degree in Computer Science at Linköping University, where I began my studies in 2021. Originally from Kalmar, Småland, I grew up surrounded by the beautiful nature and environment that I still love and miss to this day. \n It was during my high school years in Kalmar that I realized my passion for computer science. My journey into programming started with games—specifically Minecraft—which sparked my interest in creating applications and understanding the technology behind them. \n As a driven and curious student, I am constantly seeking to expand my knowledge in the field of computer science. I’m always open to learning new frameworks, tools, and programming languages, embracing opportunities that help me grow as a developer and problem-solver.",
+    "about_2": "Outside of my studies, I enjoy spending time on hobbies that bring me both relaxation and excitement. Fishing is one of my favorite pastimes, especially for the calm it brings while being out in nature, paired with the thrill of the moment a fish strikes. So far, I’ve only fished during late spring and summer, but I hope to expand this hobby into other seasons in the future. \n In 2024, I also began my journey toward earning a motorcycle license — a challenge that turned out to be incredibly fun. My goal is to achieve the license by the summer of 2025, and I’m excited about the adventures this new chapter will bring. As of now, I am riding a Kawasaki Ninja 650, which has been a great bike to learn on. \n  I also enjoy working on personal projects outside of school. While some of these projects tend to be a bit ambitious and don’t always reach completion due to time constraints, they provide a great way for me to explore new ideas and learn along the way.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "fail_mail": "Failed to send email",
+    "success_mail": "Email sent successfully",
+    "contact": "Contact",
+    "projects": "Projects",
+    "experience": "Experience",
+    "resume": "View Full Resume",
+    "about": "About Me",
+    "project_info": "The following projects are fetched directly from GitHub and the information is thus only available in english",
+    "experiences": {
+        "amanues_aug_2024": {
+            "role": "Amanuens",
+            "startDate": "Aug 2024",
+            "endDate": "Present",
+            "company": "Linköping University",
+            "description": "Amanuens at Linköping University during the fall term. I was a teaching assistant for the courses TDP028, TDDE43, and TDDC73. All these courses dealt with app development in Flutter. TDDC73 also covered React Native, Jetpack Compose, and regular XML.",
+            "tags": ["Flutter", "React Native", "Jetpack Compose", "XML", "Firebase"],
+            "link": "https://liu.se"
+        },
+        "programmer_aug_2024": {
+            "role": "Programmer",
+            "startDate": "June 2024",
+            "endDate": "Aug 2024",
+            "company": "Mindroad",
+            "description": "Worked as a programmer at Mindroad, where I developed a course in React Native and created projects for the course with React Native and TypeScript. Additionally, I worked on developing a website using HTML, CSS, JavaScript, and a relational database in SQL.",
+            "tags": ["React Native", "TypeScript", "HTML", "CSS", "JavaScript", "SQL"],
+            "link": "https://www.mindroad.se/sv-SE"
+        },
+        "amanues_jan_2024": {
+            "role": "Amanuens",
+            "startDate": "Jan 2024",
+            "endDate": "May 2024",
+            "company": "Linköping University",
+            "description": "Teaching assistant for the course TDDD80. This course covers backend development in Python with Flask and a frontend for Android in Java/Kotlin and XML.",
+            "tags": ["Python", "Flask", "Java", "Kotlin", "XML"],
+            "link": "https://liu.se"
+        },
+        "amanues_aug_2023": {
+            "role": "Amanuens",
+            "startDate": "Aug 2023",
+            "endDate": "Dec 2023",
+            "company": "Linköping University",
+            "description": "Teaching assistant for two courses, TDP028 and TDDE43. Both courses dealt with Android app development using Java/Kotlin and XML.",
+            "tags": ["Java", "Kotlin", "XML"],
+            "link": "https://liu.se"
+        },
+        "maintenance_technician_2023": {
+            "role": "Maintenance Technician",
+            "startDate": "June 2023",
+            "endDate": "Aug 2023",
+            "company": "Arla, Linköping",
+            "description": "Summer job at Arla. Worked on solving various issues with machines.",
+            "tags": ["Machine Maintenance"],
+            "link": "https://www.arla.se/"
+        }
+    }
+}

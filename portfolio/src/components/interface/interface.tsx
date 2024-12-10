@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {motion} from "framer-motion";
 import { ContactSection } from "./contact";
 import { ExperienceSection } from "./experience";
 import { ProjectSection } from "./projects";
+import { AboutSection } from "./about";
+import { useTranslation } from "react-i18next";
 
 
 interface InterfaceProps {
+    setSection: (page: number) => void;
+    sectionRefs : React.RefObject<HTMLDivElement>[];
+}
+
+interface IntroProps {
     setSection: (page: number) => void;
 }
 
@@ -13,7 +20,7 @@ interface InterfaceProps {
 export const Section = ({children}) => {
     return (
         <motion.section 
-            className="h-screen w-screen p-16 max-w-screen-2xl mx-auto flex flex-col items-start justify-center"
+            className=" w-screen min-h-screen p-16 max-w-screen-2xl mx-auto flex flex-col items-start justify-center"
             initial={
                 {
                     opacity: 0,
@@ -28,8 +35,8 @@ export const Section = ({children}) => {
             }
             transition={
                 {
-                    duration: 1,
-                    delay: 0.5
+                    duration: 0.5,
+                    delay: 0.2
                 }
             }
         >
@@ -38,42 +45,53 @@ export const Section = ({children}) => {
     );
 }
 
-export const Interface = ({setSection} : InterfaceProps) => {
+
+export const Interface = ({ setSection, sectionRefs}: InterfaceProps) => {
+    // Create refs for each section
+
+    
     return (
-        <div className="flex flex-col items-center w-screen">
-            <IntroSection setSection={setSection}/>
-            <AboutSection/>
-            <ExperienceSection/>
-            <ProjectSection/>
-            <ContactSection/>
+        <div className="flex flex-col items-center w-screen dark:bg-slate-900 bg-white">
+            <div ref={sectionRefs[0]}>
+                <IntroSection setSection={setSection} />
+            </div>
+            <div ref={sectionRefs[1]}>
+                <AboutSection />
+            </div>
+            <div ref={sectionRefs[2]}>
+                <ExperienceSection />
+            </div>
+            <div ref={sectionRefs[3]}>
+                <ProjectSection />
+            </div>
+            <div ref={sectionRefs[4]}>
+                <ContactSection />
+            </div>
         </div>
     );
-}
+};
 
-const IntroSection = ({setSection} : InterfaceProps) => {
+
+const IntroSection = ({setSection} : IntroProps) => {
+
+    const { t } = useTranslation();
+
     return (
         <Section>
             <h1 className="text-black dark:text-white text-6xl font-extrabold leading-snug text-left">
-                Hi, I am 
+                {t("intro_1")}
                 <br/>
-                <span className="bg-gray-200 dark:bg-black px-1 italic">Liam Andersson</span>
+                <span className="bg-gray-200 dark:bg-black px-1 italic">{t("intro_2")}</span>
             </h1>
-            <p className="text-lg text-gray-800 dark:text-gray-200 mt-4">
-                A software developer with a passion for learning and creating. 
+            <p className="text-lg text-gray-800 dark:text-gray-200 mt-4 text-left">
+                {t("intro_3")}
             </p>
             <button 
                 className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
                 onClick={() => {setSection(4)}}>
-                Contact me
+                {t("contact_me")}
             </button>
         </Section>
     );
 }
 
-const AboutSection = () => {
-    return (
-        <Section>
-            <h1 className="text-5xl font-bold text-black dark:text-white">About</h1>
-        </Section>
-    )
-}

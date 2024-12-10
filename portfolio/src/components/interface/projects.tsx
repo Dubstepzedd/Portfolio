@@ -1,24 +1,27 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Section } from "./interface"
 import { Repo, fetchRepos } from "../../model/fetch_repos"
+import { useTranslation } from "react-i18next"
 
 export const ProjectSection = () => {
     const [repos, setRepos] = useState<Repo[]>([])
     const [loading, setLoading] = useState(true);
-
+    const { t } = useTranslation();
+    
     useEffect(() => {
         fetchRepos({ setRepos, setLoading, cacheKey: "repos"})
     }, []);
 
     return (
         <Section>
-            <h1 className="text-5xl font-bold text-black dark:text-white mb-8">Projects</h1>
+            <h1 className="text-5xl font-bold text-black dark:text-white mb-8">{t("projects")}</h1>
+            <p className="mb-10 p-3 bg-gray-200 dark:bg-gray-800 rounded-lg text-black dark:text-white">{t("project_info")}</p>
             {loading ? (
                 <div className="flex justify-center items-center">
                     <div className="loader"></div>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 dark:scrollbar-thumb-white scrollbar-track-transparent scrollbar-thumb-rounded">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {repos.map((repo, index) => (
                        <ProjectCard key={index} repo={repo} />
                     ))}
