@@ -28,6 +28,7 @@ concurrency:
 #  VITE_TEMPLATE_KEY: ${{ secrets.VITE_TEMPLATE_KEY }}
 #  VITE_PUBLIC_KEY: ${{ secrets.VITE_PUBLIC_KEY }}
 #  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:

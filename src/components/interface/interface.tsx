@@ -68,27 +68,25 @@ export const Interface = ({ setSection, sectionRefs}: InterfaceProps) => {
 
 
 const IntroSection = () => {
+
     const { t } = useTranslation();
 
     return (
         <Section>
-            <div className="px-4 sm:px-8">
-                <h1 className="text-black dark:text-white text-4xl sm:text-6xl font-extrabold leading-snug text-left">
-                    {t("intro_1")}
-                    <br />
-                    <span className="bg-gray-200 dark:bg-black px-1 italic">{t("intro_2")}</span>
-                </h1>
-                <p className="text-lg text-gray-800 dark:text-gray-200 mt-4 text-left">
-                    {t("intro_3")}
-                </p>
-                <button
-                    className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
-                    onClick={() => window.location.href = "mailto:liam.andersson2002@gmail.com"}
-                >
-                    {t("contact_me")}
-                </button>
-            </div>
+            <h1 className="text-black dark:text-white text-4xl md:text-6xl font-extrabold text-left">
+                {t("intro_1")}
+                <br />
+                <span className="bg-gray-200 dark:bg-black px-1 italic mt-4 inline-block">{t("intro_2")}</span>
+            </h1>
+            <p className="text-lg text-gray-800 dark:text-gray-200 mt-4 text-left">
+            {t("intro_3")}
+            </p>
+            <button 
+            className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+            onClick={() => window.location.href = "mailto:liam.andersson2002@gmail.com"}>
+            {t("contact_me")}
+            </button>
         </Section>
     );
-};
+}
 
