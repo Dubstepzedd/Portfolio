@@ -2,6 +2,7 @@ import React from 'react';
 import { IconButton } from '@mui/material';
 import { GB,SE } from 'country-flag-icons/react/3x2'
 import { useTranslation } from 'react-i18next';
+
 const LanguageToggle = () => {
     const { i18n } = useTranslation(); // Get the i18n instance from react-i18next
     const language = i18n.language; // Get the current language

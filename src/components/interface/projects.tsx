@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Section } from "./interface"
 import { Repo, fetchRepos } from "../../model/fetch_repos"
 import { useTranslation } from "react-i18next"
