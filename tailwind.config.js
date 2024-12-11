@@ -7,9 +7,6 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {},
-  },
-  plugins: [
-    require('tailwind-scrollbar'),
-  ],
+  }
 }
 
