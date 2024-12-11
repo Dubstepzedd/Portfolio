@@ -23,7 +23,7 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
             >
                 <ul className="mt-32 p-4 space-y-5 font-semibold select-none font-mono text-lg">
                     {/* If Contact section is added back, add "Contact" below*/}
-                    {["Introduction", "About me", "Experience", "Projects"].map((title, index) => (
+                    {[t("introduction"),t("about"), t("experience"), t("projects")].map((title, index) => (
                         <li key={index}>
                             <a
                                 className={`rounded-lg p-2 block hover:bg-orange-400 ${
@@ -49,7 +49,7 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
                     </a>
                 </div>
 
-                <p className="p-2 font-thin italic text-wrap text-black dark:text-white text-center">{t("copy_right")}</p>
+                <p className="px-2 font-thin italic text-wrap text-black dark:text-white text-center">{t("copy_right")}</p>
             </div>
 
             <div
