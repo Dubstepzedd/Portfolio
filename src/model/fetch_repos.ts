@@ -1,5 +1,7 @@
 let GITHUB_TOKEN: string = import.meta.env.VITE_SERVICE_KEY as string;
 
+console.log(GITHUB_TOKEN);
+
 export class Repo {
     name: string;
     description: string;
