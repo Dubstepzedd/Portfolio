@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Set up environment variables for build
+        run: |
+          echo "VITE_PUBLIC_KEY=${{ secrets.PUBLIC_KEY }}" >> $GITHUB_ENV
+          echo "VITE_SERVICE_KEY=${{ secrets.SERVICE_KEY }}" >> $GITHUB_ENV
+          echo "VITE_TEMPLATE_KEY=${{ secrets.TEMPLATE_KEY }}" >> $GITHUB_ENV
+
       - name: Build project
         run: npm run build
 
@@ -47,12 +53,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
-      - name: Run application with secrets
-        run: npm start
-        env:
-          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
-          SERVICE_KEY: ${{ secrets.SERVICE_KEY }}
-          TEMPLATE_KEY: ${{ secrets.TEMPLATE_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
