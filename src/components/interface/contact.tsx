@@ -1,7 +1,6 @@
 import { Section } from "./interface";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import keys from "../../../keys.json";
 import { useTranslation } from "react-i18next";
 
 export const ContactSection = () =>  {
@@ -10,20 +9,25 @@ export const ContactSection = () =>  {
     const [status, setStatus] = useState(""); // To show success or error message
     const { t } = useTranslation();
 
-    const handleChange = (e) => {
+    const SERVICE_KEY: string = import.meta.env.VITE_SERVICE_KEY;
+    const TEMPLATE_KEY: string = import.meta.env.VITE_TEMPLATE_KEY;
+    const PUBLIC_KEY: string = import.meta.env.VITE_PUBLIC_KEY;
+ 
+
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         emailjs
             .send(
-                keys.SERVICE_KEY, // Replace with your service ID
-                keys.TEMPLATE_KEY, // Replace with your template ID
+                SERVICE_KEY,
+                TEMPLATE_KEY, // Replace with your template ID
                 formData,
-                keys.PUBLIC_KEY // Replace with your user ID
+                PUBLIC_KEY // Replace with your user ID
             )
             .then(
                 () => {
