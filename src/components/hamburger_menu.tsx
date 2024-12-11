@@ -3,6 +3,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import DarkModeToggle from "./dark_mode_toggle";
 import LanguageToggle from "./language_toggle";
+import { useTranslation } from "react-i18next";
 
 type HamburgerMenuProps = {
     section: number;
@@ -10,17 +11,19 @@ type HamburgerMenuProps = {
 };
 
 const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
+    const { t } = useTranslation();
     const [isOpen, setOpen] = useState<boolean>(false);
 
     return (
         <div>
             <div
-                className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-700 shadow-lg sm:w-64 md:w-96 transform ${
+                className={`fixed top-0 right-0 h-full bg-white dark:bg-gray-800 shadow-lg transform ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 z-40`}
             >
                 <ul className="mt-32 p-4 space-y-5 font-semibold select-none font-mono text-lg">
-                    {["Introduction", "About me", "Experience", "Projects", "Contact"].map((title, index) => (
+                    {/* If Contact section is added back, add "Contact" below*/}
+                    {["Introduction", "About me", "Experience", "Projects"].map((title, index) => (
                         <li key={index}>
                             <a
                                 className={`rounded-lg p-2 block hover:bg-orange-400 ${
@@ -46,7 +49,7 @@ const HamburgerMenu = ({ section, onSectionChange }: HamburgerMenuProps) => {
                     </a>
                 </div>
 
-                <p className="p-2 font-thin italic text-wrap text-black dark:text-white text-center">© 2024 Liam Andersson. All rights reserved</p>
+                <p className="p-2 font-thin italic text-wrap text-black dark:text-white text-center">{t("copy_right")}</p>
             </div>
 
             <div

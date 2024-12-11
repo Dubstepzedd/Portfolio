@@ -14,7 +14,7 @@ export const AboutSection = () => {
                 {/* First 'Section' */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-10 text-left">
                     <div className="lg:w-2/3">
-                        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed ">
                             {t("about_1")}
                         </p>
                     

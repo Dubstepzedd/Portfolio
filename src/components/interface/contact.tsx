@@ -1,3 +1,8 @@
+/* 
+    Comment on file:
+    This file is not used on the Github Pages due to the token being visible in the source code.
+    This is because the page is client side and to avoid needing to host a server, this code is not used but still available in the project if needed later on. 
+*/
 import { Section } from "./interface";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -19,7 +24,8 @@ export const ContactSection = () =>  {
         setFormData({ ...formData, [name]: value });
     };
     
-    const handleSubmit = (e) => {
+    // This function has visible tokens in the client side source code. (See comment above)
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         setIsSubmitting(true);
         emailjs

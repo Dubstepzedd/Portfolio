@@ -1,5 +1,11 @@
+/*
+    Comment:
+    This was used locally when developing the site but is not present on the Github Pages due to the token being visible in the source code.
+    This is because the page is client side and to avoid needing to host a server, this fetch code is replaced by static data. 
+*/
+
+
 let GITHUB_TOKEN: string = import.meta.env.VITE_GITHUB_TOKEN as string;
-console.log(GITHUB_TOKEN);
 
 export class Repo {
     name: string;

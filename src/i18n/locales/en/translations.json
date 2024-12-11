@@ -17,6 +17,7 @@
     "experience": "Experience",
     "resume": "View Full Resume",
     "about": "About Me",
+    "copy_right": "© 2022 Liam Andersson. All rights reserved.",
     "project_info": "The following projects are fetched directly from GitHub and the information is thus only available in english",
     "experiences": {
         "amanues_aug_2024": {
@@ -64,5 +65,37 @@
             "tags": ["Machine Maintenance"],
             "link": "https://www.arla.se/"
         }
-    }
+    },
+    "projects_github": [
+        {
+            "name": "Game Engine",
+            "description": "A game engine developed in C++ using OpenGL. The engine is focused on 3D, with no 2D support as of now.",
+            "languages": ["C++", "OpenGL", "GLSL", "CMake" ],
+            "link": "https://github.com/Dubstepzedd/GameEngine"
+        },
+        {
+            "name": "Flappy Bird Clone",
+            "description": "My first project coding C++. The project is a clone of the game Flappy Bird using the SDL library.",
+            "languages": ["C++"],
+            "link": "https://github.com/Dubstepzedd/FlappyBirdClone"
+        },
+        {
+            "name": "Graduation Website",
+            "description": "A website developed in PHP, CSS, HTML and a tiny bit of Javascript. The website contains a login system, wish list, mail system, admin panel and more.",
+            "languages": ["PHP", "CSS", "HTML", "JavaScript", "SQL"],
+            "link": "https://github.com/Dubstepzedd/Graduation-Website"
+        },
+        {
+            "name": "Portfolio Website",
+            "description": "This is the page you are on right now. The website is developed in React using TypeScript, TailwindCSS and i18next.",
+            "languages": ["TypeScript", "React", "TailwindCSS", "i18next"],
+            "link": "https://github.com/Dubstepzedd/Portfolio"
+        },
+        {
+            "name": "Android App",
+            "description": "An app similar to Strava, but a lot fewer functions. The app is developed in Java and XML using Android Studio. The project has its own backend developed in Python using Flask.",
+            "languages": ["Java", "XML", "Python", "Flask", "SQL"],
+            "link": "https://github.com/Dubstepzedd/Android-Project"
+        }
+    ]
 }

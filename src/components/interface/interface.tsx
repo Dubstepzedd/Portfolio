@@ -47,13 +47,11 @@ export const Section = ({children}) => {
 
 
 export const Interface = ({ setSection, sectionRefs}: InterfaceProps) => {
-    // Create refs for each section
-
     
     return (
         <div className="flex flex-col items-center w-screen dark:bg-slate-900 bg-white">
             <div ref={sectionRefs[0]}>
-                <IntroSection setSection={setSection} />
+                <IntroSection />
             </div>
             <div ref={sectionRefs[1]}>
                 <AboutSection />
@@ -64,34 +62,33 @@ export const Interface = ({ setSection, sectionRefs}: InterfaceProps) => {
             <div ref={sectionRefs[3]}>
                 <ProjectSection />
             </div>
-            <div ref={sectionRefs[4]}>
-                <ContactSection />
-            </div>
         </div>
     );
 };
 
 
-const IntroSection = ({setSection} : IntroProps) => {
-
+const IntroSection = () => {
     const { t } = useTranslation();
 
     return (
         <Section>
-            <h1 className="text-black dark:text-white text-6xl font-extrabold leading-snug text-left">
-                {t("intro_1")}
-                <br/>
-                <span className="bg-gray-200 dark:bg-black px-1 italic">{t("intro_2")}</span>
-            </h1>
-            <p className="text-lg text-gray-800 dark:text-gray-200 mt-4 text-left">
-                {t("intro_3")}
-            </p>
-            <button 
-                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
-                onClick={() => {setSection(4)}}>
-                {t("contact_me")}
-            </button>
+            <div className="px-4 sm:px-8">
+                <h1 className="text-black dark:text-white text-4xl sm:text-6xl font-extrabold leading-snug text-left">
+                    {t("intro_1")}
+                    <br />
+                    <span className="bg-gray-200 dark:bg-black px-1 italic">{t("intro_2")}</span>
+                </h1>
+                <p className="text-lg text-gray-800 dark:text-gray-200 mt-4 text-left">
+                    {t("intro_3")}
+                </p>
+                <button
+                    className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+                    onClick={() => window.location.href = "mailto:liam.andersson2002@gmail.com"}
+                >
+                    {t("contact_me")}
+                </button>
+            </div>
         </Section>
     );
-}
+};
 

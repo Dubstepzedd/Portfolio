@@ -21,11 +21,13 @@ concurrency:
   cancel-in-progress: true
 
 # Allow repo secrets
-env:
-  VITE_SERVICE_KEY: ${{ secrets.VITE_SERVICE_KEY }}
-  VITE_TEMPLATE_KEY: ${{ secrets.VITE_TEMPLATE_KEY }}
-  VITE_PUBLIC_KEY: ${{ secrets.VITE_PUBLIC_KEY }}
-  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+
+# Removed these due to security concerns
+#env:
+#  VITE_SERVICE_KEY: ${{ secrets.VITE_SERVICE_KEY }}
+#  VITE_TEMPLATE_KEY: ${{ secrets.VITE_TEMPLATE_KEY }}
+#  VITE_PUBLIC_KEY: ${{ secrets.VITE_PUBLIC_KEY }}
+#  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 jobs:
   # Single deploy job since we're just deploying
   deploy:
