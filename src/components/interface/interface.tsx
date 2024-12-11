@@ -66,7 +66,6 @@ export const Interface = ({ setSection, sectionRefs}: InterfaceProps) => {
     );
 };
 
-
 const IntroSection = () => {
 
     const { t } = useTranslation();
