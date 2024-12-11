@@ -15,7 +15,7 @@ const LanguageToggle = () => {
 
     return (
         <IconButton onClick={toggleLanguage} color="inherit">
-            {language === 'se' ? <GB className='w-7 h-7' /> : <SE className='w-7 h-7'/>}
+            {language === 'se' ? <SE className='w-7 h-7'/> : <GB className='w-7 h-7' />}
         </IconButton>
     );
 };

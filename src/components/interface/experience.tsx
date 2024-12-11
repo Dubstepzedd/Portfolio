@@ -96,7 +96,7 @@ const ExperienceCard = ({
         href={link} // link to the webpage
         target="_blank"
         rel="noopener noreferrer" // for security reasons when opening in a new tab
-        className="bg-gray-200 dark:bg-gray-800 rounded-lg p-4 flex flex-col sm:flex-row items-start gap-4 max-w-lg w-full select-none transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+        className="bg-gray-200 dark:bg-gray-800 rounded-lg p-4 flex flex-col sm:flex-row items-start gap-4 w-full sm:w-1/2 select-none transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
       >
         {/* Date Section */}
         <div className="flex-shrink-0 sm:w-1/3 w-full">
@@ -105,18 +105,18 @@ const ExperienceCard = ({
         {/* Content Section */}
         <div className="flex flex-col justify-start sm:w-2/3 w-full text-left">
           <h2 className="text-xl font-semibold text-black dark:text-white">
-            {role} · {company}
+        {role} · {company}
           </h2>
           <p className="inline-block text-wrap text-gray-700 dark:text-gray-300">{description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="bg-orange-400 text-black font-semibold px-3 py-1 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
+        {tags.map((tag, index) => (
+          <span
+        key={index}
+        className="bg-orange-400 text-black font-semibold px-3 py-1 rounded-full"
+          >
+        {tag}
+          </span>
+        ))}
           </div>
         </div>
       </a>

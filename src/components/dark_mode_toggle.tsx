@@ -12,7 +12,7 @@ const DarkModeToggle = () => {
 
     return (
         <IconButton onClick={handleToggle} color="inherit">
-            {theme == "light" ? <Brightness4/> : <Brightness7/>}
+            {theme == "light" ? <Brightness7/> : <Brightness4/>}
         </IconButton>
     );
 };

@@ -80,10 +80,10 @@ const IntroSection = () => {
             <p className="text-lg text-gray-800 dark:text-gray-200 mt-4 text-left">
             {t("intro_3")}
             </p>
-            <button 
-            className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
-            onClick={() => window.location.href = "mailto:liam.andersson2002@gmail.com"}>
-            {t("contact_me")}
+            <button
+                className="bg-orange-400 text-black py-4 px-8 rounded-lg font-bold text-lg mt-16 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+                onClick={() => window.open("mailto:liam.andersson2002@gmail.com", "_blank")}>
+                {t("contact_me")}
             </button>
         </Section>
     );
