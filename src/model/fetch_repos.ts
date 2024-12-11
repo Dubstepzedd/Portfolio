@@ -1,4 +1,4 @@
-let GITHUB_TOKEN: string = import.meta.env.VITE_SERVICE_KEY as string;
+let GITHUB_TOKEN: string = import.meta.env.VITE_GITHUB_TOKEN as string;
 
 console.log(GITHUB_TOKEN);
 
