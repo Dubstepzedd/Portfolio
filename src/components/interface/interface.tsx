@@ -12,11 +12,6 @@ interface InterfaceProps {
     sectionRefs : React.RefObject<HTMLDivElement>[];
 }
 
-interface IntroProps {
-    setSection: (page: number) => void;
-}
-
-
 export const Section = ({children}) => {
     return (
         <motion.section 
