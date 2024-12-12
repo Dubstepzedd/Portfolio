@@ -73,7 +73,7 @@ const App = () => {
       }}
     >
       <HamburgerMenu section={section} onSectionChange={handleManualSectionChange} />
-      <Interface setSection={handleManualSectionChange} sectionRefs={sectionRefs} />
+      <Interface sectionRefs={sectionRefs} />
       <Footer />
     </div>
   );

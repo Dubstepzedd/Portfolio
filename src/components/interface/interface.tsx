@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 
 
 interface InterfaceProps {
-    setSection: (page: number) => void;
     sectionRefs : React.RefObject<HTMLDivElement>[];
 }
 
@@ -41,7 +40,7 @@ export const Section = ({children}) => {
 }
 
 
-export const Interface = ({ setSection, sectionRefs}: InterfaceProps) => {
+export const Interface = ({ sectionRefs}: InterfaceProps) => {
     
     return (
         <div className="flex flex-col items-center w-screen dark:bg-slate-900 bg-white">
