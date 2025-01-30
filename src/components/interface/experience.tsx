@@ -10,11 +10,12 @@ type ExperienceCardProps = {
     description: string;
     tags: string[];
     link: string
+    img: string
 }
 
 export const ExperienceSection = () => {
     const scrollableDivRef = useRef<HTMLDivElement>(null);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     
     return (
         <Section>
@@ -23,7 +24,12 @@ export const ExperienceSection = () => {
                 className="bg-orange-400 text-black py-4 px-8 rounded-lg font-semibold text-lg - mt-8 transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700" 
                 onClick={
                     () => {
-                        window.open('resume.pdf');
+                        if(i18n.language === "en") {
+                          window.open('resume_en.pdf');
+                        }
+                        else {
+                          window.open('resume.pdf');
+                        }
                     }
                 }
             >
@@ -31,6 +37,17 @@ export const ExperienceSection = () => {
             </button>
             <div ref={scrollableDivRef} className="mt-8 space-y-8 flex-col flex">
             <ExperienceCard
+                img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDtxtpEVup0EgeFc8-FFDKXHnBPXu00V5bg&s"}
+                role={t("experiences.amanues_jan_2025.role")}
+                startDate={t("experiences.amanues_jan_2025.startDate")}
+                endDate={t("experiences.amanues_jan_2025.endDate")}
+                company={t("experiences.amanues_jan_2025.company")}
+                description={t("experiences.amanues_jan_2025.description")}
+                tags={t("experiences.amanues_jan_2025.tags", { returnObjects: true }) as string[]}
+                link={t("experiences.amanues_jan_2025.link")}
+            />
+            <ExperienceCard
+                img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDtxtpEVup0EgeFc8-FFDKXHnBPXu00V5bg&s"}
                 role={t("experiences.amanues_aug_2024.role")}
                 startDate={t("experiences.amanues_aug_2024.startDate")}
                 endDate={t("experiences.amanues_aug_2024.endDate")}
@@ -40,6 +57,7 @@ export const ExperienceSection = () => {
                 link={t("experiences.amanues_aug_2024.link")}
               />
               <ExperienceCard
+                img={"https://h24-original.s3.amazonaws.com/180040/15132033-egcWi.jpg"}
                 role={t("experiences.programmer_aug_2024.role")}
                 startDate={t("experiences.programmer_aug_2024.startDate")}
                 endDate={t("experiences.programmer_aug_2024.endDate")}
@@ -49,6 +67,7 @@ export const ExperienceSection = () => {
                 link={t("experiences.programmer_aug_2024.link")}
               />
               <ExperienceCard
+                img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDtxtpEVup0EgeFc8-FFDKXHnBPXu00V5bg&s"}
                 role={t("experiences.amanues_jan_2024.role")}
                 startDate={t("experiences.amanues_jan_2024.startDate")}
                 endDate={t("experiences.amanues_jan_2024.endDate")}
@@ -58,6 +77,7 @@ export const ExperienceSection = () => {
                 link={t("experiences.amanues_jan_2024.link")}
               />
               <ExperienceCard
+                img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDtxtpEVup0EgeFc8-FFDKXHnBPXu00V5bg&s"}
                 role={t("experiences.amanues_aug_2023.role")}
                 startDate={t("experiences.amanues_aug_2023.startDate")}
                 endDate={t("experiences.amanues_aug_2023.endDate")}
@@ -67,6 +87,7 @@ export const ExperienceSection = () => {
                 link={t("experiences.amanues_aug_2023.link")}
               />
               <ExperienceCard
+                img={"https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/1200px-Arla_Foods_logo.svg.png"}
                 role={t("experiences.maintenance_technician_2023.role")}
                 startDate={t("experiences.maintenance_technician_2023.startDate")}
                 endDate={t("experiences.maintenance_technician_2023.endDate")}
@@ -90,20 +111,26 @@ const ExperienceCard = ({
     description,
     tags,
     link,
+    img
   }: ExperienceCardProps) => {
     return (
       <a
         href={link} // link to the webpage
         target="_blank"
         rel="noopener noreferrer" // for security reasons when opening in a new tab
-        className="bg-gray-200 dark:bg-gray-800 rounded-lg p-4 flex flex-col sm:flex-row items-start gap-4 w-full sm:w-1/2 select-none transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
+        className="bg-gray-200 dark:bg-gray-800 rounded-lg p-4 flex flex-col lg:flex-row items-start gap-4 w-full lg:w-1/2 select-none transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-700"
       >
         {/* Date Section */}
-        <div className="flex-shrink-0 sm:w-1/3 w-full">
+        <div className="flex-shrink-0 lg:w-1/3 w-full">
           <p className="font-semibold text-gray-700 dark:text-gray-300 ">{startDate} - {endDate}</p>
+          <img
+            src={img}
+            alt={`${role} at ${company}`}
+            className="lg:w-52 md:w-46 mx-auto object-cover p-5"
+          />
         </div>
         {/* Content Section */}
-        <div className="flex flex-col justify-start sm:w-2/3 w-full text-left">
+        <div className="flex flex-col justify-start lg:w-2/3 w-full text-left">
           <h2 className="text-xl font-semibold text-black dark:text-white">
         {role} · {company}
           </h2>
@@ -119,6 +146,10 @@ const ExperienceCard = ({
         ))}
           </div>
         </div>
+        {/* Image Section */}
+        
+      
+        
       </a>
     );
   };

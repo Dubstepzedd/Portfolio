@@ -21,10 +21,19 @@
     "project_info": "Följande projekt hämtas direkt från GitHub och informationen är därför endast tillgänglig på engelska.",
     "copy_right": "© 2022 Liam Andersson. Alla rättigheter förbehållna.",
     "experiences": {
+        "amanues_jan_2025": {
+            "role": "Amanuens",
+            "startDate": "Jan 2025",
+            "endDate": "Nu",
+            "company": "Linköpings Universitet",
+            "description": "Handledare i en kurs, TDDD80. Den här kursen hanterar utveckling av en backend i Python med Flask samt en frontend för Android/iOS i Flutter med Dart.",
+            "tags": ["Flutter", "Flask", "Microsoft Azure", "Python", "Dart"],
+            "link": "https://liu.se"
+        },
         "amanues_aug_2024": {
             "role": "Amanuens",
             "startDate": "Aug 2024",
-            "endDate": "Nu",
+            "endDate": "Dec 2024",
             "company": "Linköpings Universitet",
             "description": "Amanuens på Linköpings Universitet under höstterminen. Jag var handledare i kurserna TDP028, TDDE43 och TDDC73. Alla dessa kurser hanterade app-utveckling i Flutter. TDDC73 hanterade också React Native, Jetpack Compose och vanlig XML.",
             "tags": ["Flutter", "React Native", "Jetpack Compose", "XML", "Firebase"],
@@ -54,7 +63,7 @@
             "endDate": "Dec 2023",
             "company": "Linköpings Universitet",
             "description": "Handledare i två kurser, TDP028 och TDDE43. Båda dessa kurser hanterade utveckling av appar till Android i Java/Kotlin och XML.",
-            "tags": ["Java", "Kotlin", "XML", "Firebase"],
+            "tags": ["Java", "Kotlin", "XML", "Firebase", "Microsoft Azure", "Python"],
             "link": "https://liu.se"
         },
         "maintenance_technician_2023": {

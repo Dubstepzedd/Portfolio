@@ -3,7 +3,7 @@
     "intro_2": "Liam Andersson",
     "intro_3": "A computer-science student with a passion for learning and creating.",
     "contact_me": "Email me!",
-    "about_1": "I’m currently pursuing a Master’s degree in Computer Science at Linköping University, where I began my studies in 2021. I am originally from the charming coastal town of Kalmar in Småland, Sweden but moved to Linköping after I graduated from high school in 2021. \n It was during my high school years in Kalmar that I realized my passion for computer science. My journey into programming started with games—specifically Minecraft—which sparked my interest in creating applications and understanding the technology behind them. \n As a driven and curious student, I am constantly seeking to expand my knowledge in the field of computer science. I’m always open to learning new frameworks, tools, and programming languages, embracing opportunities that help me grow as a developer and problem-solver.",
+    "about_1": "I'm currently pursuing a Master's degree in Computer Science at Linköping University, where I began my studies in 2021. I am originally from the charming coastal town of Kalmar in Småland, Sweden but moved to Linköping after I graduated from high school in 2021. \n It was during my high school years in Kalmar that I realized my passion for computer science. My journey into programming started with games—specifically Minecraft—which sparked my interest in creating applications and understanding the technology behind them. \n As a driven and curious student, I am constantly seeking to expand my knowledge in the field of computer science. I’m always open to learning new frameworks, tools, and programming languages, embracing opportunities that help me grow as a developer and problem-solver.",
     "about_2": "Outside of my studies, I enjoy spending time on hobbies that bring me both relaxation and excitement. Fishing is one of my favorite pastimes, especially for the calm it brings while being out in nature, paired with the thrill of the moment a fish strikes. So far, I’ve only fished during late spring and summer, but I hope to expand this hobby into other seasons in the future. \n In 2024, I also began my journey toward earning a motorcycle license — a challenge that turned out to be incredibly fun. My goal is to achieve the license by the summer of 2025, and I’m excited about the adventures this new chapter will bring. As of now, I am riding a Kawasaki Ninja 650, which has been a great bike to learn on. \n  I also enjoy working on personal projects outside of school. While some of these projects tend to be a bit ambitious and don’t always reach completion due to time constraints, they provide a great way for me to explore new ideas and learn along the way.",
     "name": "Name",
     "email": "Email",
@@ -21,8 +21,17 @@
     "copy_right": "© 2022 Liam Andersson. All rights reserved.",
     "project_info": "The following projects are fetched directly from GitHub and the information is thus only available in english",
     "experiences": {
+        "amanues_jan_2025": {
+            "role": "Teaching Assistant",
+            "startDate": "Jan 2025",
+            "endDate": "Now",
+            "company": "Linköping University",
+            "description": "Instructor for the course TDDD80. This course covers backend development in Python using Flask and frontend development for Android/iOS using Flutter with Dart.",
+            "tags": ["Flutter", "Flask", "Microsoft Azure", "Python", "Dart"],
+            "link": "https://liu.se"
+        },
         "amanues_aug_2024": {
-            "role": "Amanuens",
+            "role": "Teaching Assistant",
             "startDate": "Aug 2024",
             "endDate": "Present",
             "company": "Linköping University",
@@ -40,7 +49,7 @@
             "link": "https://www.mindroad.se/sv-SE"
         },
         "amanues_jan_2024": {
-            "role": "Amanuens",
+            "role": "Teaching Assistant",
             "startDate": "Jan 2024",
             "endDate": "May 2024",
             "company": "Linköping University",
@@ -49,7 +58,7 @@
             "link": "https://liu.se"
         },
         "amanues_aug_2023": {
-            "role": "Amanuens",
+            "role": "Teaching Assistant",
             "startDate": "Aug 2023",
             "endDate": "Dec 2023",
             "company": "Linköping University",
