@@ -126,7 +126,7 @@ const ExperienceCard = ({
           <img
             src={img}
             alt={`${role} at ${company}`}
-            className="lg:w-52 md:w-46 mx-auto object-cover p-5"
+            className="w-32 h-32 max-w-[120px] max-h-[120px] mx-auto object-contain p-2"
           />
         </div>
         {/* Content Section */}
