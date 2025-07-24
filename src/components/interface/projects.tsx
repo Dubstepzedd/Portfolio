@@ -2,7 +2,6 @@ import React from "react"
 import { Section } from "./interface"
 import { useTranslation } from "react-i18next"
 
-
 interface ProjectGithub {
   name: string;
   description: string;

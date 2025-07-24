@@ -1,10 +1,10 @@
 {
-    "intro_1": "Hej, jag är ",
+    "intro_1": "Hej, mitt namn är ",
     "intro_2": "Liam Andersson",
     "intro_3": "En datavetenskapsstudent med en passion för att lära och skapa.",
     "contact_me": "Mejla mig!",
-    "about_1": "Jag studerar för närvarande en masterexamen i datavetenskap vid Linköpings universitet, där jag började mina studier 2021. ¨Jag kommer ursprungligen från den charmiga kuststaden Kalmar i Småland, Sverige, men flyttade till Linköping efter att jag tog studenten 2021. \n Det var under mina gymnasieår i Kalmar som jag insåg min passion för datavetenskap. Min resa in i programmering började med spel – specifikt Minecraft – vilket väckte mitt intresse för att skapa applikationer och förstå teknologin bakom dem. \n Som en drivande och nyfiken student söker jag ständigt efter att utöka mina kunskaper inom datavetenskapens område. Jag är alltid öppen för att lära mig nya ramverk, verktyg och programmeringsspråk och omfamnar möjligheter som hjälper mig att växa som utvecklare och problemlösare.",
-    "about_2": "Utanför mina studier tycker jag om att ägna mig åt hobbies som ger mig både avslappning och spänning. Fiske är ett stort intresse under sommaren, särskilt för lugnet det ger att vara ute i naturen kombinerat med spänningen i ögonblicket när en fisk nappar. Hittills har jag bara fiskat under sena våren och sommaren, men jag hoppas att kunna utöka denna hobby till andra årstider i framtiden. \n Under 2024 började jag också min resa mot att ta motorcykelkörkort – en utmaning som visade sig vara otroligt rolig. Mitt mål är att ta körkortet sommaren 2025, och jag ser fram emot de äventyr som detta nya kapitel kommer att föra med sig. Just nu kör jag en Kawasaki Ninja 650, som har varit en fantastisk motorcykel att lära sig på. \n Jag tycker också om att arbeta med personliga projekt utanför skolan. Även om några av dessa projekt tenderar att vara lite ambitiösa och inte alltid blir färdiga på grund av tidsbegränsningar, är de ett bra sätt för mig att utforska nya idéer och lära mig under resans gång.",
+    "about_1": "Jag studerar för närvarande en masterexamen i datavetenskap vid Linköpings universitet, där jag började mina studier 2021. Jag kommer ursprungligen från den charmiga kuststaden Kalmar i Småland men flyttade till Linköping efter att jag tog studenten 2021. Det var under mina gymnasieår i Kalmar som jag insåg min passion för datavetenskap. Min resa in i programmering började med spel – specifikt Minecraft – vilket väckte mitt intresse för att skapa applikationer och förstå teknologin bakom dem. Som en drivande och nyfiken student söker jag ständigt efter att utöka mina kunskaper inom datavetenskapens område. Jag är alltid öppen för att lära mig nya ramverk, verktyg och programmeringsspråk, och omfamnar möjligheter som hjälper mig att växa som utvecklare och problemlösare.",
+    "about_2": "Utanför mina studier tycker jag om att ägna mig åt hobbies som ger mig både avslappning och spänning. Fiske är ett stort intresse under sommaren, särskilt för lugnet det ger att vara ute i naturen kombinerat med spänningen i ögonblicket när en fisk nappar. Hittills har jag främst fiskat under sena våren och sommaren, men jag hoppas kunna utöka denna hobby till andra årstider i framtiden. Ett annat stort intresse är motorcyklar. Jag tog mitt motorcykelkörkort under 2025, och det har sedan dess blivit en hobby jag verkligen uppskattar. Att köra motorcykel ger både frihetskänsla och ett härligt avbrott från vardagen. Just nu kör jag en Kawasaki Ninja 650, som varit en fantastisk maskin att både lära sig på och njuta av vägarna med. Jag tycker också om att arbeta med personliga projekt utanför skolan. Även om några av dessa projekt tenderar att vara lite ambitiösa och inte alltid blir färdiga på grund av tidsbegränsningar, är de ett bra sätt för mig att utforska nya idéer och lära mig under resans gång.",
     "name": "Namn",
     "email": "E-post",
     "message": "Meddelande",
@@ -21,7 +21,16 @@
     "project_info": "Följande projekt hämtas direkt från GitHub och informationen är därför endast tillgänglig på engelska.",
     "copy_right": "© 2025 Liam Andersson. Alla rättigheter förbehållna.",
     "experiences": {
-        "amanues_jan_2025": {
+        "ericsson_summer_2025": {
+            "role": "Praktikant som mjukvaruingenjör",
+            "startDate": "Juni 2025",
+            "endDate": "Augusti 2025",
+            "company": "Ericsson",
+            "description": "Praktik på Ericsson, där jag arbetade med ett internt chatbot-projekt som hjälper kunder med deras problem. Vi använde tekniker som RAG och testade olika chunking-strategier för att uppnå bästa resultat.",
+            "tags": ["Python", "LLM", "RAG", "FastAPI", "Angular", "TypeScript"],
+            "link": "https://www.ericsson.com"
+        },
+        "amanuens_jan_2025": {
             "role": "Amanuens",
             "startDate": "Jan 2025",
             "endDate": "Nu",
@@ -30,7 +39,7 @@
             "tags": ["Flutter", "Flask", "Microsoft Azure", "Python", "Dart"],
             "link": "https://liu.se"
         },
-        "amanues_aug_2024": {
+        "amanuens_aug_2024": {
             "role": "Amanuens",
             "startDate": "Aug 2024",
             "endDate": "Dec 2024",
@@ -48,7 +57,7 @@
             "tags": ["React Native", "TypeScript", "HTML", "CSS", "JavaScript", "SQL"],
             "link": "https://www.mindroad.se/sv-SE"
         },
-        "amanues_jan_2024": {
+        "amanuens_jan_2024": {
             "role": "Amanuens",
             "startDate": "Jan 2024",
             "endDate": "Maj 2024",
@@ -57,7 +66,7 @@
             "tags": ["Python", "Flask", "Java", "Kotlin", "XML"],
             "link": "https://liu.se"
         },
-        "amanues_aug_2023": {
+        "amanuens_aug_2023": {
             "role": "Amanuens",
             "startDate": "Aug 2023",
             "endDate": "Dec 2023",
@@ -86,8 +95,20 @@
         {
             "name": "Flappy Bird-klon",
             "description": "Mitt första projekt i C++. Projektet är en klon av spelet Flappy Bird som använder SDL-biblioteket.",
-            "languages": ["C++"],
+            "languages": ["C++", "SDL"],
             "link": "https://github.com/Dubstepzedd/FlappyBirdClone"
+        },
+        {
+            "name": "CartSync",
+            "description": "En app utvecklad i Flutter som låter användare synkronisera sina shoppingvagnar över flera enheter. Backend är utvecklad i Flask och använder SQLAlchemy för att enkelt kunna byta SQL-databas.",
+            "languages": ["Flutter", "Dart", "Python", "Flask", "SQL"],
+            "link": "https://github.com/Dubstepzedd/CartSync"
+        },
+        {
+            "name": "Tetris-klon",
+            "description": "En klon av spelet Tetris utvecklad i C och körbar i terminalen. Spelet ska fungera både på Linux och Windows.",
+            "languages": ["C", "CMake"],
+            "link": "https://github.com/Dubstepzedd/Tetris-C"
         },
         {
             "name": "Examenswebbplats",

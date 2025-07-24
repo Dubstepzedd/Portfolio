@@ -1,6 +1,5 @@
 import React from "react";
 import {motion} from "framer-motion";
-import { ContactSection } from "./contact";
 import { ExperienceSection } from "./experience";
 import { ProjectSection } from "./projects";
 import { AboutSection } from "./about";
@@ -13,14 +12,14 @@ interface InterfaceProps {
 
 export const Section = ({children}) => {
     return (
-        <motion.section 
+        <motion.section
             className=" w-screen min-h-screen p-16 max-w-screen-2xl mx-auto flex flex-col items-start justify-center"
             initial={
                 {
                     opacity: 0,
                     y: 50
                 }
-            }    
+            }
             whileInView={
                 {
                     opacity: 1,
@@ -41,7 +40,7 @@ export const Section = ({children}) => {
 
 
 export const Interface = ({ sectionRefs}: InterfaceProps) => {
-    
+
     return (
         <div className="flex flex-col items-center w-screen dark:bg-slate-900 bg-white">
             <div ref={sectionRefs[0]}>
