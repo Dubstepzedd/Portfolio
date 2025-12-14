@@ -1,38 +1,16 @@
-import React from "react"
-import { useTranslation } from "react-i18next";
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { Terminal } from "lucide-react";
 
-export const Footer = () => {
-    const { t } = useTranslation();
-
+const Footer = () => {
     return (
-    <footer className="flex flex-col items-center justify-center w-full dark:bg-slate-800 bg-gray-200 p-2">
-        <div className="flex justify-center space-x-6 mt-8 mb-4">
-            <a
-                href="https://www.linkedin.com/in/liam-andersson-8865b4239/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white"
-            >
-                <FaLinkedin size={30} color="#0077b5" />
-            </a>
-            <a
-                href="https://github.com/Dubstepzedd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white"
-            >
-                <FaGithub size={30} color="#333" />
-            </a>
-        </div>
-
-        <div className="flex flex-col space-x-4 mt-4">
-            <p className="text-center text-black dark:text-white">
-            <a href="mailto:Liam.andersson2002@gmail.com" target="_blank" className="text-blue-500 hover:text-blue-700">{t("contact_me")}</a>
-            </p>
-        </div>
-
-        <p className="p-2 font-thin italic text-wrap text-black dark:text-white text-center">{t("copy_right")}</p>
-    </footer>
-    )
+        <footer className="mt-12 py-12 border-t border-border/50">
+            <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                    <Terminal className="h-4 w-4 text-primary" />
+                    <span className="font-mono text-sm">Liam Andersson</span>
+                </div>
+            </div>
+        </footer>
+    );
 }
+
+export default Footer;
