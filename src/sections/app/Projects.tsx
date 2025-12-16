@@ -96,14 +96,14 @@ const Projects = () => {
                             ["Java", "Maven", "Parsing & Tokenizers"]
                         }
                         githubLink="https://github.com/Dubstepzedd/EquationParser"
-                        isCompleted={false}
+                        isCompleted={true}
                     />
                     <Project
                         title="Portfolio Website"
                         description="A personal portfolio designed to showcase my projects and technical skills. Built with modern web technologies, focusing on responsive design, accessibility, and a clean UI/UX."
                         skills={["React", "TypeScript", "Tailwind CSS", "Vite"]}
                         githubLink="https://github.com/Dubstepzedd/Portfolio"
-                        isCompleted={false}
+                        isCompleted={true}
                     />
                     <Project
                         title="CartSync"
