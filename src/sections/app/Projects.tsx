@@ -110,7 +110,7 @@ const Projects = () => {
                         description="Cross-platform mobile application for synchronizing shopping lists in real-time. Features a responsive Flutter UI connected to a Python backend, utilizing sockets & streams to keep the 'Cart' in-sync across all instances."
                         skills={["Flask", "Dart", "Flutter", "SQLite"]}
                         githubLink="https://github.com/Dubstepzedd/CartSync"
-                        isCompleted={false}
+                        isCompleted={true}
                     />
 
                 </div>
